@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            width: 50px;
+            height: 50px;
+        }
+        input{
+            margin-bottom: 15px;
+            height: 35px;
+            width: 205px;
+        }
+        #calculator{
+            padding: 10px 0px 0px 10px;
+            height: 320px;
+            border: solid gray;
+            width: 225px;
+        }
+        #clear{
+            width: 30px;
+            height: 25px;
+            margin: 0px 5px 5px 0px;
+        }
+        #rez{
+            width: 212px;
+        }
+    </style>
+</head>
+<body>
+    <div id="calculator">
+        <div class="row">
+           
+            <input id="n" type="text">
+        </div>
+        <div class="row">
+            <button onclick="press('7')">7</button>
+            <button onclick="press('8')">8</button>
+            <button onclick="press('9')">9</button>
+            <button onclick="press('/')">/</button>
+            
+        </div>
+        <div class="row">
+            <button onclick="press('4')">4</button>
+            <button onclick="press('5')">5</button>
+            <button onclick="press('6')">6</button>
+            <button onclick="press('*')">x</button>
+            
+        </div>
+        <div class="row">
+            <button onclick="press('1')">1</button>
+            <button onclick="press('2')">2</button>
+            <button onclick="press('3')">3</button>
+            <button onclick="press('-')">-</button>
+        </div>
+        <div class="row">
+            
+            <button onclick="press('0')">0</button>
+            <button onclick="clear2()">⌦</button>
+            <button onclick="clear1()">C</button>
+            <button onclick="press('+')">+</button>
+        </div>
+        <div class="row">
+            <button id="rez" onclick="calc()">=</button>
+        </div>
+    </div>
+    
+    <script>
+        let n = document.getElementById("n");
+    
+        function clear1() {
+            n.value = "";
+        }
+        function calc() {
+            n.value = eval(n.value);
+        }
+        function press(x) {
+            n.value += x;
+        }
+        function clear2() {
+            n.value = n.value.slice(0, -1);
+        }
+    </script>  
+</body>
+</html>
